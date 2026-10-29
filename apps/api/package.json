@@ -1,0 +1,31 @@
+{
+  "name": "@flowpilot/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "build": "nest build",
+    "dev": "nest start --watch",
+    "start": "node dist/main",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@flowpilot/contracts": "workspace:*",
+    "@flowpilot/database": "workspace:*",
+    "@nestjs/common": "^11.0.10",
+    "@nestjs/core": "^11.0.10",
+    "@nestjs/platform-express": "^11.0.10",
+    "@nestjs/swagger": "^11.0.6",
+    "dotenv": "^16.4.7",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.2",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^11.0.5",
+    "@nestjs/schematics": "^11.0.2",
+    "@types/express": "^5.0.0",
+    "@types/node": "^20.17.19",
+    "typescript": "^5.8.2"
+  }
+}
