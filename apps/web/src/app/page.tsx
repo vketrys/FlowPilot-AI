@@ -8,7 +8,9 @@ export default function HomePage() {
           <div className="logo-icon">FP</div>
           <div>
             <h2 style={{ fontSize: '1.25rem', fontWeight: 700 }}>FlowPilot AI</h2>
-            <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Multi-Tenant B2B Workspace</p>
+            <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
+              Multi-Tenant B2B Workspace
+            </p>
           </div>
         </div>
         <div>
@@ -60,8 +62,8 @@ export default function HomePage() {
             <span className="badge badge-green">Port 5435</span>
           </div>
           <p>
-            Local persistence container running PostgreSQL 16 with pgvector v0.8.7 extension
-            for workspace-scoped vector embeddings and transactional outbox.
+            Local persistence container running PostgreSQL 16 with pgvector v0.8.7 extension for
+            workspace-scoped vector embeddings and transactional outbox.
           </p>
           <div className="status-row">
             <span style={{ color: 'var(--text-secondary)' }}>Image</span>
@@ -98,21 +100,35 @@ export default function HomePage() {
           <h3>Architectural Constraints & Coding Standards</h3>
           <span className="badge">docs/coding-standards.md</span>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '16px', marginTop: '16px' }}>
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+            gap: '16px',
+            marginTop: '16px',
+          }}
+        >
           <div>
-            <h4 style={{ fontSize: '0.95rem', marginBottom: '4px', color: 'var(--text-primary)' }}>Tenant Isolation</h4>
+            <h4 style={{ fontSize: '0.95rem', marginBottom: '4px', color: 'var(--text-primary)' }}>
+              Tenant Isolation
+            </h4>
             <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
-              Mandatory <code>workspaceId</code> scoping on every query, model lookup, and write tool.
+              Mandatory <code>workspaceId</code> scoping on every query, model lookup, and write
+              tool.
             </p>
           </div>
           <div>
-            <h4 style={{ fontSize: '0.95rem', marginBottom: '4px', color: 'var(--text-primary)' }}>Human-in-the-Loop</h4>
+            <h4 style={{ fontSize: '0.95rem', marginBottom: '4px', color: 'var(--text-primary)' }}>
+              Human-in-the-Loop
+            </h4>
             <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
               AI agents propose actions; human approval required before any business state mutation.
             </p>
           </div>
           <div>
-            <h4 style={{ fontSize: '0.95rem', marginBottom: '4px', color: 'var(--text-primary)' }}>KISS & SOLID</h4>
+            <h4 style={{ fontSize: '0.95rem', marginBottom: '4px', color: 'var(--text-primary)' }}>
+              KISS & SOLID
+            </h4>
             <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
               Clean boundaries, provider-neutral model adapters, and zero premature microservices.
             </p>

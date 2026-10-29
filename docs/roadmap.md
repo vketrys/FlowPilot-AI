@@ -4,20 +4,20 @@
 
 ## M0 — Agent-first engineering foundation (now)
 - [x] Agent rules, skills, reviewer roles, workflow and architectural docs scaffolded.
-- [ ] Install and authenticate Antigravity CLI in the actual developer environment.
-- [ ] Confirm project rules and skills are discovered.
+- [x] Install and authenticate Antigravity CLI in the actual developer environment.
+- [x] Confirm project rules and skills are discovered.
 - [x] Create Git repository, main branch, ignore list and review conventions.
 - [x] Decide where to host source and how to run local PostgreSQL.
 - [x] Approve architecture and narrow Milestone 1.
 
 ## M1 — Working foundation (no LLM)
 - [x] pnpm/Turborepo workspace with `apps/web`, `apps/api`, `apps/worker`, `packages/database`, `packages/contracts`.
-- [x] Next.js and NestJS start locally.
-- [x] PostgreSQL + Prisma; repeatable migrations.
+- [x] Next.js and NestJS start locally with database health checks.
+- [x] PostgreSQL + Prisma; repeatable migrations and synthetic multi-tenant seed data.
 - [ ] OIDC login plus workspace membership and RBAC.
 - [ ] Task CRUD with workspace authorization, OpenAPI contract and tests.
-- [x] CI: format/lint/typecheck/test/build (real working scripts).
-- [ ] Document local startup/teardown.
+- [ ] CI: format/lint/typecheck/test/build (real working scripts).
+- [x] Document local startup/teardown.
 
 ## M2 — Documents and queues
 - [ ] Scoped presigned S3 uploads; local development storage strategy.

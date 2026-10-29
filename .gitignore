@@ -20,4 +20,5 @@ terraform.tfstate*
 *.local
 postgres-data/
 *.tsbuildinfo
+next-env.d.ts
 # AI tool runtime state; keep committed .agents/rules, .agents/skills and .agents/agents
