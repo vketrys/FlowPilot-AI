@@ -9,8 +9,56 @@ generator client {
   previewFeatures = ["postgresqlExtensions"]
 }
 
-// Baseline model for Slice 1 infrastructure verification.
-// Domain entities (Workspace, User, Membership, Task, Document) will be introduced in subsequent slices.
+enum Role {
+  OWNER
+  ADMIN
+  MEMBER
+  VIEWER
+}
+
+model User {
+  id          String            @id @default(cuid())
+  email       String            @unique
+  name        String?
+  avatarUrl   String?           @map("avatar_url")
+  createdAt   DateTime          @default(now()) @map("created_at")
+  updatedAt   DateTime          @updatedAt @map("updated_at")
+
+  memberships WorkspaceMember[]
+
+  @@map("users")
+}
+
+model Workspace {
+  id        String            @id @default(cuid())
+  name      String
+  slug      String            @unique
+  createdAt DateTime          @default(now()) @map("created_at")
+  updatedAt DateTime          @updatedAt @map("updated_at")
+
+  members   WorkspaceMember[]
+
+  @@map("workspaces")
+}
+
+model WorkspaceMember {
+  id          String    @id @default(cuid())
+  workspaceId String    @map("workspace_id")
+  userId      String    @map("user_id")
+  role        Role      @default(MEMBER)
+  joinedAt    DateTime  @default(now()) @map("joined_at")
+  updatedAt   DateTime  @updatedAt @map("updated_at")
+
+  workspace   Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([workspaceId, userId])
+  @@index([workspaceId])
+  @@index([userId])
+  @@map("workspace_members")
+}
+
+// Baseline model for health check verification
 model HealthCheck {
   id        String   @id @default(cuid())
   createdAt DateTime @default(now())

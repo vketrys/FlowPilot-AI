@@ -39,6 +39,8 @@ export class HealthController {
       uptimeSeconds: Math.floor(process.uptime()),
     };
 
-    return res.status(isHealthy ? HttpStatus.OK : HttpStatus.SERVICE_UNAVAILABLE).json(responsePayload);
+    return res
+      .status(isHealthy ? HttpStatus.OK : HttpStatus.SERVICE_UNAVAILABLE)
+      .json(responsePayload);
   }
 }

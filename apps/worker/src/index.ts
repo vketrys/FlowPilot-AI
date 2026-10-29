@@ -25,7 +25,9 @@ class BackgroundWorker {
     }
 
     this.isRunning = true;
-    console.log('[FlowPilot Worker] Background worker operational (Ready for queue consumption in M2).');
+    console.log(
+      '[FlowPilot Worker] Background worker operational (Ready for queue consumption in M2).',
+    );
 
     // Heartbeat log loop
     this.heartbeatInterval = setInterval(() => {
