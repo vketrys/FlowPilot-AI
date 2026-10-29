@@ -1,0 +1,20 @@
+datasource db {
+  provider   = "postgresql"
+  url        = env("DATABASE_URL")
+  extensions = [vector]
+}
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["postgresqlExtensions"]
+}
+
+// Baseline model for Slice 1 infrastructure verification.
+// Domain entities (Workspace, User, Membership, Task, Document) will be introduced in subsequent slices.
+model HealthCheck {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  status    String   @default("OK")
+
+  @@map("health_checks")
+}
