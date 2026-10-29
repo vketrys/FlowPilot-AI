@@ -1,0 +1,14 @@
+node_modules
+.next
+dist
+build
+coverage
+.turbo
+*.log
+postgres-data
+.git
+pnpm-lock.yaml
+.agents
+docs
+*.md
+next-env.d.ts
